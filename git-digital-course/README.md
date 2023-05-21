@@ -1,9 +1,10 @@
 
-#Curso Digital: Git/Versionamento
+# Curso Digital: Git/Versionamento
 
-##Gravando mudanças no repositório
+## Gravando mudanças no repositório
 
-##Salvando alterações no Git
+## Salvando alterações no Git
 
 * uso do comando git restore
 * comando git push
+* comando git pull
