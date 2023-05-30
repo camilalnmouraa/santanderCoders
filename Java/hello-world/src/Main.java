@@ -1,23 +1,32 @@
+import java.sql.SQLOutput;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int a;
-        int b = 2;
+        boolean fimDeSemana = false;
+        boolean fazendoSol = true;
+        boolean vamosAPraia = fimDeSemana && fazendoSol;
 
-        a = 3;
+        //tabela verdade
 
-        int soma = a + b;
-        int subtracao = a - b;
-        int multiplicacao = a * b;
-        float divisao = (float) a / b;
+        //operador && (AND)
+        // true && true = true
+        // true && false = false
+        // false && true = false
+        // false && false = false
 
-        System.out.println(soma);
-        System.out.println(subtracao);
-        System.out.println(multiplicacao);
-        System.out.println(divisao);
+        //Operador || (OR)
+        // true || true = true
+        // true || false = true
+        // false || true = true
+        // false || false = false
 
+
+        System.out.println(vamosAPraia);
+
+        String mensagem = fimDeSemana ? "É fim de Semana" : "Não é fim de semana";
+        System.out.println(mensagem);
 
     }
 }
