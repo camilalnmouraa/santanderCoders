@@ -1,37 +1,32 @@
 import java.sql.SQLOutput;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+import java.time.LocalDateTime;
+
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int nota = 100;
-        String graduacao;
+        String nome = "Camila";
 
-        // A 80 B 70 C 60 D 0
-        if (nota >= 80) {
-            graduacao = "A";
-        } else if (nota < 80 && nota >=70) {
-            graduacao = "B";
-        } else if (nota < 70 && nota >= 60) {
-            graduacao = "C";
-        } else if (nota < 60 && nota >= 0){
-            graduacao = "D";
+        LocalDate hoje = LocalDate.now();
+        Locale brasil = new Locale("pt", "BR");
+        String diaSemana = hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil);
+        String saudacao;
+        LocalDateTime agora = LocalDateTime.now();
+        if (agora.getHour() >= 0 && agora.getHour() <12) {
+            saudacao = "Bom dia!";
+        } else if (agora.getHour() >= 12 && agora.getHour() < 18) {
+            saudacao = "Boa Tarde!";
+        } else if (agora.getHour() >= 18 && agora.getHour() < 24) {
+            saudacao = "Boa Noite!";
         } else {
-            graduacao = "";
+            saudacao = "Olá.";
         }
 
-        switch (graduacao) {
-            case "A":
-            case "B":
-                System.out.println("Aluno Aprovado!");
-                break;
-            case "C":
-            case "D":
-                System.out.println("Aluno Reprovado!");
-                break;
-            default:
-                System.out.println("Graduação Inválida!");
-        }
+        System.out.printf("Olá, %s. Hoje é %s, %s.%n", nome, diaSemana, saudacao.toUpperCase());
 
     }
 }
