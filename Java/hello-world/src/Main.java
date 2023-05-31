@@ -8,25 +8,15 @@ import java.time.LocalDateTime;
 public class Main {
 
     public static void main(String[] args) {
+        // 1 2 3 4 5 6 7 8 9 10
+        // para uma variavel que inicia em 1, e vai até 10, mudando 1-por1, faca:
 
-        String nome = "Camila";
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 1; j < 10; j++) {
+                System.out.println(j + "x" + i + " = " + j * i);
+            }
 
-        LocalDate hoje = LocalDate.now();
-        Locale brasil = new Locale("pt", "BR");
-        String diaSemana = hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil);
-        String saudacao;
-        LocalDateTime agora = LocalDateTime.now();
-        if (agora.getHour() >= 0 && agora.getHour() <12) {
-            saudacao = "Bom dia!";
-        } else if (agora.getHour() >= 12 && agora.getHour() < 18) {
-            saudacao = "Boa Tarde!";
-        } else if (agora.getHour() >= 18 && agora.getHour() < 24) {
-            saudacao = "Boa Noite!";
-        } else {
-            saudacao = "Olá.";
         }
-
-        System.out.printf("Olá, %s. Hoje é %s, %s.%n", nome, diaSemana, saudacao.toUpperCase());
 
     }
 }
